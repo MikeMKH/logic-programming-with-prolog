@@ -39,3 +39,23 @@ great_grandfather_of(GreatGrandfather,Child) :-
   father(GreatGrandfather,Grandparent),
   child_of(Parent,Grandparent),
   child_of(Child,Parent).
+
+% ancestor(louise,Desc) :- parent(louise,Desc).
+% parent(louise,Desc) :- mother(louise,Desc).
+% mother(louise,caroline).
+
+% ancestor(louise,Desc) :- parent(louise,Z),ancestor(Z,Desc). 
+% parent(louise,Z) :- mother(louise,Z).
+% mother(louise,caroline).
+% ancestor(caroline,Desc) :- parent(caroline,Desc).
+% parent(caroline,Desc) :- mother(caroline,Desc).
+% mother(caroline,david).
+
+% ancestor(louise,Desc) :- parent(louise,Z),ancestor(Z,Desc). 
+% parent(louise,Z) :- mother(louise,Z).
+% mother(louise,caroline).
+% ancestor(caroline,Desc) :- parent(caroline,Desc).
+% parent(caroline,Desc) :- mother(caroline,Desc).
+% mother(caroline,janet).
+
+q2(Desc) :- ancestor(louise,Desc).
