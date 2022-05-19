@@ -24,3 +24,12 @@ B isa_small_animal:- B isa_cat,B is_small.
 X chases Y:-
  X isa_large_dog, Y isa_small_animal,
  write(X),write(' chases '),write(Y),nl.
+
+q2(X, Y) :-
+  number(X),number(Y),
+  Avg is (X + Y) / 2,
+  Sqrt is sqrt(X * Y),
+  Max is max(X, Y),
+  write('Average = '),write(Avg),nl,
+  write('Square Root = '),write(Sqrt),nl,
+  write('Max = '),write(Max),nl.
