@@ -12,6 +12,17 @@ convert_tolower(X, Y) :-
 convert_tolower(X, X) :- X < 65.
 convert_tolower(X, X) :- X > 90.
 
+copyterms(Input, Output) :-
+  seeing(S),telling(T),
+  see(Input),tell(Output),
+  copying,
+  seen,see(S),told,tell(T).
+copying :- read(X),process_copying(X).
+process_copying(end_of_file).
+process_copying(X) :-
+  X \= end_of_file,
+  write(X),write('.'),nl,copying.
+
 readline :-
   get0(X), process_readline(X).
 process_readline(42).
