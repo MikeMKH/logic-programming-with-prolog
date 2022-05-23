@@ -31,3 +31,15 @@ process_readline(X) :-
   X =\= 10,
   write(X),write(' '),
   readline.
+
+combine(In1, In2, Out) :-
+  seeing(S),telling(T),
+  tell(Out),
+  see(In1),copyfile,seen,
+  see(In2),copyfile,seen,
+  seen,see(S),told,tell(T).
+copyfile :-
+  read(X),process_copyfile(X).
+process_copyfile(end_of_file).
+process_copyfile(X) :-
+  write(X),nl,copyfile.
