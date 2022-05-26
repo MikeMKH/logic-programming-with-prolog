@@ -11,3 +11,6 @@ process_add_data(Animal) :- assertz(animal(Animal)),!.
 display_animal :-
   animal(X),write(X),nl,fail.
 display_animal.
+
+remove_data(Animal) :- retract(animal(Animal)).
+remove_data(_).
