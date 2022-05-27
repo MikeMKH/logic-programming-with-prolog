@@ -6,3 +6,5 @@ inc([X|L], [X1|L1]) :-
   inc(L,L1).
 
 palindrome(L) :- reverse(L, R), R = L.
+
+putfirst(X,L,[X|L]).
