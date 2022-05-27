@@ -10,3 +10,7 @@ palindrome(L) :- reverse(L, R), R = L.
 putfirst(X,L,[X|L]).
 
 putlast(X,L,R) :- append(L,[X],R).
+
+p1(L,R) :- findall([X],member(X,L),R).
+p2(L,R) :- findall(pred(X,X),member(X,L),R).
+p3(L,R) :- findall([element,X],member(X,L),R).
