@@ -8,3 +8,8 @@ tail(T, [_|T]).
 T tail X :- tail(X, T).
 
 X iss Y :- X is Y.
+
+addArg(Term, X, Result) :-
+  Term =.. [Func|Args],
+  append(Args, [X], NewArgs),
+  Result =.. [Func|NewArgs].
